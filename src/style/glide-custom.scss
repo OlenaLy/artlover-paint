@@ -1,0 +1,91 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.sec3-cards {
+  .sec3-card {
+        border: 2px solid $accent-pink-color;
+        border-radius: 5px;
+        padding: 20px;
+    }
+  
+    .glide__arrow{
+    border-color: $accent-pink-color;
+    color: $accent-pink-color;
+    background-color: $white-color;
+    }
+    .glide__arrow--left {
+      left: -6em;
+    }
+    .glide__arrow--right {
+      right: -6em;
+    }
+
+  
+    // @include onSmallDesktop {
+    //   width: 20px;
+    //   height: 20px;
+    // }
+  
+    // @include onSmallTablet {
+    //   width: 10px;
+    //   height: 10px;
+    // }
+  
+  }
+.sec4-cards {
+  .sec4-card {
+        border: 2px solid $accent-pink-color;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .glide__bullets {
+      bottom: -2.5em;
+      
+      @include onSmallTablet {
+          bottom: -2em;
+        }
+    }
+    
+    .glide__bullet {
+      width: 20px;
+      height: 20px;
+      border: 1px solid $accent-pink-color;
+      background-color: transparent;
+      opacity: 0.6;
+  
+    &:hover {
+      opacity: 0.8;
+      background-color: #d76bab;
+    }
+      
+    &:focus {
+      outline: none;
+    }
+         
+      /* ACTIVE */
+    &--active {
+      opacity: 1;
+      background-color: #d76bab;
+      border-color: #d76bab;
+    }
+      
+      /* ACTIVE + FOCUS — КРИТИЧНО */
+    &--active:focus,
+    &--active:hover {
+      background-color: #d76bab;
+      border-color: #d76bab;
+      opacity: 1;
+    }
+
+  
+    @include onSmallDesktop {
+      width: 20px;
+      height: 20px;
+    }
+  
+    @include onSmallTablet {
+      width: 10px;
+      height: 10px;
+    }
+    }
+  }
