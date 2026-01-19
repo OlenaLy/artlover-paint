@@ -62,9 +62,38 @@
           }
         }
       }
-    
+      .modal-content{
+        h3 {
+          font-size: 28px;
+          line-height: 40px;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+        p {
+          color: black;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 1px;
+          text-align: justify;
+        }
+        @include onLargeTablet{
+          h3{
+            font-size: 20px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+        @include onMobile{
+          h3{
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
       img {
-        // float: left;
         width: 30%;
         margin: 0 25px 5px 0;
         border-radius: 5px;

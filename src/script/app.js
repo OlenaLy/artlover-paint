@@ -148,7 +148,6 @@ const btnIdsToOpenModal = ['sec-2-card-1-btn', 'sec-2-card-2-btn', 'sec-2-card-3
     if (!btnEl) return;
 
     const modalId = btnEl.dataset.modalId;
-    // const modalId = btnEl.getAttribute('data-modal-id');
     const modalEl = document.getElementById(modalId);
 
     btnEl.addEventListener('click', function(e) {
