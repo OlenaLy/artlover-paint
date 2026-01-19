@@ -87,26 +87,26 @@ if (glideEl) {
 const cardsAll = document.querySelector('.sec3-cards__slides');
 
 const images = [
-  'assets/images/1.jpg',
-  'assets/images/2.jpg',
-  'assets/images/3.jpg',
-  'assets/images/4.jpg',
-  'assets/images/5.jpg',
-  'assets/images/6.jpg',
-  'assets/images/7.jpg',
-  'assets/images/8.jpg',
-  'assets/images/9.jpg',
-  'assets/images/10.jpg',
-  'assets/images/11.jpg',
-  'assets/images/12.jpg',
-  'assets/images/13.jpg',
-  'assets/images/14.jpg',
-  'assets/images/15.jpg',
-  'assets/images/16.jpg',
-  'assets/images/17.jpg',
-  'assets/images/18.jpg',
-  'assets/images/19.jpg',
-  'assets/images/20.jpg'
+  'assets/images/1.webp',
+  'assets/images/2.webp',
+  'assets/images/3.webp',
+  'assets/images/4.webp',
+  'assets/images/5.webp',
+  'assets/images/6.webp',
+  'assets/images/7.webp',
+  'assets/images/8.webp',
+  'assets/images/9.webp',
+  'assets/images/10.webp',
+  'assets/images/11.webp',
+  'assets/images/12.webp',
+  'assets/images/13.webp',
+  'assets/images/14.webp',
+  'assets/images/15.webp',
+  'assets/images/16.webp',
+  'assets/images/17.webp',
+  'assets/images/18.webp',
+  'assets/images/19.webp',
+  'assets/images/20.webp'
 ];
 
 images.forEach((src, index) => {
@@ -131,7 +131,7 @@ if (glideEl3) {
     perView: 2,
     gap: 20,
     breakpoints: {
-      980: {
+      768: {
         perView: 1,
       }
     }
