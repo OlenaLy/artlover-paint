@@ -137,7 +137,7 @@ main{
                 background-color: $accent-pink-color;
                 border-radius: 5px;
                 width: 90px;
-                height: fit-content;
+                // height: fit-content;
                 margin-right: 15px;
             }
             @include onLargeTablet{
