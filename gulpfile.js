@@ -66,7 +66,10 @@ function copyAssets() {
 function serve() {
   bs.init({
     server: {
-      baseDir: './build'
+      baseDir: './build',
+      routes: {
+        '/artlover-paint': './build'
+      }
     },
     port: 3000
   });
