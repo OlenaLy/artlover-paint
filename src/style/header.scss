@@ -2,22 +2,21 @@
 @use './mixins' as *;
 
 header {
-    padding: 30px 0;
-    font-family: 'Century Gothic';
-    // box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 8px 10px -5px rgba(210, 125, 185, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: $white-color;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: 30px 0;
+  font-family: 'Century Gothic';
+  box-shadow: 0 8px 10px -5px rgba(210, 125, 185, 0.3);
+  width: 100%;
+  background-color: $white-color;
 
-    .mobile-menu {
-      display: none;
-    }
-  
-    .logo {
+  .mobile-menu {
+    display: none;
+  }
+
+  .logo {
       max-width: 300px;
         img {
           max-height: 100%;

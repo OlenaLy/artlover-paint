@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileMenu.classList.remove('visible');
   }
 
-  burgerBtn.addEventListener('click', function () {
+  burgerBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
     if (mobileMenu.classList.contains('visible')) {
       closeMenu();
     } else {
@@ -29,48 +30,27 @@ document.addEventListener('DOMContentLoaded', function () {
       closeMenu();
     });
   });
+
+  document.addEventListener('click', function (e) {
+    if (!mobileMenu.classList.contains('visible')) return;
+
+    const isClickInside =
+      mobileMenu.contains(e.target) ||
+      burgerBtn.contains(e.target);
+
+    if (!isClickInside) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('visible')) {
+      closeMenu();
+    }
+  });
+
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const burgerBtn = document.querySelector('header button.burger');
-//   const burgerBtnIcons = document.querySelectorAll('header button.burger img');
-//   const mobileMenu = document.querySelector('header .mobile-menu .nav');
-//   const menuLinks = mobileMenu.querySelectorAll('a');
-
-//   function openMenu() {
-//     burgerBtnIcons[0].classList.add('hidden');    // burger
-//     burgerBtnIcons[1].classList.remove('hidden'); // cross
-//     mobileMenu.classList.add('visible');
-//   }
-
-//   function closeMenu() {
-//     burgerBtnIcons[0].classList.remove('hidden'); // burger
-//     burgerBtnIcons[1].classList.add('hidden');    // cross
-//     // burgerBtnIcons.forEach(icon => icon.classList.toggle('hidden'));
-//     mobileMenu.classList.remove('visible');
-//   }
-
-//   burgerBtn.addEventListener('click', function() {
-    // burgerBtnIcons.forEach((icon) => {
-    //   icon.classList.toggle('hidden');
-    //   mobileMenu.classList.toggle('visible');
-    // });
-//     if (mobileMenu.classList.contains('visible')) {
-//       closeMenu();
-//     } else {
-//       openMenu();
-//     }
-//   });
-
-//     menuLinks.forEach(link => {
-//       link.addEventListener('click', function () {
-//         closeMenu();
-//       });
-//     });
-
-//     document.querySelector('header .mobile-menu .nav').classList.toggle('visible');
-//   })
-// });
 
 const sec1Btn = document.querySelector('.sec1-btn');
 sec1Btn.addEventListener('click', () => window.open('https://www.instagram.com/artlover_lessons?utm_source=qr&igsh=MXFrcGF6MHBsajU4OQ=='));
@@ -143,6 +123,15 @@ const btnIdsToOpenModal = ['sec-2-card-1-btn', 'sec-2-card-2-btn', 'sec-2-card-3
   const generalModalWrapper = document.querySelector('.modals-wrapper');
   const closeModalBtns = document.querySelectorAll('.modal-close-btn');
 
+  function closeModal() {
+    generalModalWrapper.classList.remove('visible');
+    document
+      .querySelectorAll('.modal.visible')
+      .forEach(modal => modal.classList.remove('visible'));
+  
+    document.body.classList.remove('overflow');
+  }
+
   btnIdsToOpenModal.forEach((btnId) => {
     const btnEl = document.getElementById(btnId);
     if (!btnEl) return;
@@ -157,12 +146,30 @@ const btnIdsToOpenModal = ['sec-2-card-1-btn', 'sec-2-card-2-btn', 'sec-2-card-3
       document.querySelector('body').classList.add('overflow');
     });
   })
-
+  
   closeModalBtns.forEach((closeBtn) => {
-    closeBtn.addEventListener('click', function() {
-      generalModalWrapper.classList.remove('visible');
-      this.parentElement.classList.remove('visible');
-      document.querySelector('body').classList.remove('overflow');
-    })
+    closeBtn.addEventListener('click', closeModal);
   });
+
+  // ✅ КЛІК ПО ОВЕРЛЕЮ
+generalModalWrapper.addEventListener('click', function (e) {
+  if (e.target === generalModalWrapper) {
+    closeModal();
+  }
+});
+
+// ✅ ESC (best practice)
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && generalModalWrapper.classList.contains('visible')) {
+    closeModal();
+  }
+});
+
+  // closeModalBtns.forEach((closeBtn) => {
+  //   closeBtn.addEventListener('click', function() {
+  //     generalModalWrapper.classList.remove('visible');
+  //     this.parentElement.classList.remove('visible');
+  //     document.querySelector('body').classList.remove('overflow');
+  //   })
+  // });
 
