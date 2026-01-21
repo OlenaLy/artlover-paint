@@ -275,6 +275,14 @@ main{
       display: block;
       text-align: center;
 
+      &.photo {
+        width: 115px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
       &.rating {
         font-size: 30px;
         font-weight: 700;
@@ -368,6 +376,7 @@ main{
       span {
         &.photo {
           width: 100px;
+          margin-bottom: 10px
         }
         &.rating {
           font-size: 25px;
@@ -430,6 +439,7 @@ main{
       span {
         &.photo {
           width: 80px;
+          margin-bottom: 5px;
         }
         &.rating {
           font-size: 20px;
@@ -460,6 +470,9 @@ main{
   @include onMobile {
     .sec4-card {
       span {
+        &.photo {
+          margin-bottom: 3px;
+        }
         &.rating {
           font-size: 18px;
           margin-bottom: 3px;
