@@ -127,8 +127,7 @@ const btnIdsToOpenModal = ['sec-2-card-1-btn', 'sec-2-card-2-btn', 'sec-2-card-3
     generalModalWrapper.classList.remove('visible');
     document
       .querySelectorAll('.modal.visible')
-      .forEach(modal => modal.classList.remove('visible'));
-  
+      .forEach(modal => modal.classList.remove('visible'));  
     document.body.classList.remove('overflow');
   }
 
@@ -146,30 +145,19 @@ const btnIdsToOpenModal = ['sec-2-card-1-btn', 'sec-2-card-2-btn', 'sec-2-card-3
       document.querySelector('body').classList.add('overflow');
     });
   })
-  
+
   closeModalBtns.forEach((closeBtn) => {
     closeBtn.addEventListener('click', closeModal);
   });
 
-  // ✅ КЛІК ПО ОВЕРЛЕЮ
 generalModalWrapper.addEventListener('click', function (e) {
   if (e.target === generalModalWrapper) {
     closeModal();
   }
 });
 
-// ✅ ESC (best practice)
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && generalModalWrapper.classList.contains('visible')) {
     closeModal();
   }
 });
-
-  // closeModalBtns.forEach((closeBtn) => {
-  //   closeBtn.addEventListener('click', function() {
-  //     generalModalWrapper.classList.remove('visible');
-  //     this.parentElement.classList.remove('visible');
-  //     document.querySelector('body').classList.remove('overflow');
-  //   })
-  // });
-

@@ -17,14 +17,14 @@ header {
   }
 
   .logo {
-      max-width: 300px;
-        img {
-          max-height: 100%;
-          max-width: 100%;
-          height: auto;
-          width: auto;
-          object-fit: contain;
-        }
+    max-width: 300px;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      }
     }
     .instagram{
       max-width: 60px;
@@ -35,7 +35,6 @@ header {
         height: auto;
         width: auto;
         object-fit: contain;
-        // margin: 0 0 10px;
       }
     }
   
@@ -75,45 +74,36 @@ header {
         ul {
           li {
             margin-right: 20px;
-  
             a {
               font-size: 28px;
             }
           }
         }
       }
-  
     }
   
     @include onSmallDesktop {
       padding: 20px 0;
-  
       .logo {
         height: 100px;
       }
-
       .instagram {
         width: 45px;
       }
-
       .nav {
         ul {
           li {
             margin-right: 15px;
-  
             a {
               font-size: 22px;
             }
           }
         }
       }
-  
     }
   
     @include onLargeTablet {
       padding: 10px 0;
-  
-
     }
   
     @include onSmallTablet {
@@ -122,23 +112,19 @@ header {
       .desktop-menu {
         display: none;
       }
-  
       .mobile-menu {
         display: flex;
-  
         button.burger {
           height: 40px;
           width: 40px;
           border: none;
           cursor: pointer;
-          
           img {
             &.hidden {
               display: none;
             }
           }
         }
-   
         .nav {
           position: fixed;
           top: 75px;
@@ -152,12 +138,10 @@ header {
           border-radius: 5px;
           transform: translateX(100%);
           transition: transform 0.2s linear;
-  
           &.visible {
             transform: translateX(50%);
             right: 20px;
           }
-  
           ul {
             li {
               text-align: center;
@@ -170,7 +154,6 @@ header {
               &:last-child {
                 margin-bottom: 0;
               }
-  
               a {
                 font-size: 18px;
                 text-decoration: none;
@@ -183,36 +166,27 @@ header {
   
     @include onMobile {
       padding: 10px 0;
-  
       .logo {
         height: 175px;
       }
-  
       .mobile-menu {
         button.burger {
           height: 30px;
           width: 30px;
-          // background: white;
-  
           img {
             width: 25px;
           }
         }
-  
-  
         .nav {
           width: max-content;;
           top: 50px;
           padding: 15px 15px 25px;
-  
           ul {
             li {
               margin: 0 auto 10px;
               padding-bottom: 5px;
-  
               a {
                 font-size: 16px;
-
               }
             }
           }
@@ -220,33 +194,24 @@ header {
       }
     }
   }
-  
-  
-  
   header {
     @include onSmallTablet {
       padding: 15px 0;
-  
       .desktop-menu {
         display: none;
       }
-  
       .mobile-menu {
         display: flex;
         button.burger {
           height: 40px;
           width: 40px;
-          // background: white;
-  
           img {
             width: 30px;
-  
             &.hidden {
               display: none;
             }
           }
         }
-  
         .nav {
           position: fixed;
           top: 90px;  right: 0;
@@ -255,9 +220,8 @@ header {
           background-color: $white-color;
           transform: translateX(100%);
           transition: transform 0.2s linear;
-  
+
           &.visible { transform: translateX(0); }
-  
           ul {
             li {
               text-align: center; 
@@ -267,7 +231,6 @@ header {
               border-bottom: solid 1p $accent-pink-color;
   
               &:last-child { margin-bottom: 0; }
-  
               a { font-size: 14px; }
             }
           }
@@ -275,5 +238,3 @@ header {
       }
     }
   }
-  
-  
